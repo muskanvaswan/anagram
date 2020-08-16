@@ -1,0 +1,18 @@
+{% extends 'anagram/layout.html' %}
+{% block title %} Anagram Solver{% endblock %}
+
+{% block main %}
+<div class="container p-5">
+  <form class="form-group" action="{% url 'solve' %}" method="post">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" name="q" placeholder="Enter characters to solve" aria-label="Enter characters to solve" >
+      <div class="input-group-append">
+        <button class="btn btn-outline-success" type="submit" >Solve</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'anagram/layout.html' %}
+{% block title %} Solution {% endblock %}
+
+{% block main %}
+<div class="container p-5">
+  <h3 >Given Characters: {{ given }}</h3>
+  <h4>Solutions:</h4>
+  {% for i in s.solutions %}
+  <div class="card " >
+    <div class="card-body">
+      <h5 class="card-title">{{ i.word }}</h5>
+      <p class="card-text" id="{{ i.word }}"></p>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+  <br>
+
+  <h4>Other Permutations:</h4>
+  {% for i in s.possible %}
+  <div class="card " >
+    <div class="card-body">
+      <h5 class="card-title">{{ i }}</h5>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+  <br><br><br>
+
+</div>
+<style media="screen">
+  h3, h4{
+    color: white;
+  }
+  .card{
+    text-align: center;
+  }
+</style>
+{% endblock %}
