@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .util import solve
+from .util import solve, solve2
 # Create your views here.
 def ana(request):
     return render(request, "anagram/form.html")
